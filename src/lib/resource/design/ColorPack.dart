@@ -20,7 +20,7 @@ class MainColorPack {
   );
 
   static const MaterialColor subColor = const MaterialColor(
-    0xff0047bb,
+    0xffd6d2d4,
     const <int, Color>{
       50: const Color(0x0fd6d2d4),
       100: const Color(0x1fd6d2d4),
