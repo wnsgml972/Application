@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // TODO : 연결할 파일 import
 import 'Home.dart';
+import 'resource/design/ColorPack.dart';
 import 'Auth.dart';
 
 void main() => runApp(MainApp());
@@ -13,11 +14,8 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         // This is the theme of your application.
-        primaryColor: MaterialColor(0xFF0047bb,
-          {
+        primaryColor: MainColorPack.primaryColor,
 
-          },),
-        // visual density
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MainMenu(title: 'Coffee Street'),
@@ -98,8 +96,8 @@ class _HomeMenuState extends State<MainMenu> {
         // Set Theme
         type: BottomNavigationBarType.fixed,
         backgroundColor: Theme.of(context).primaryColor,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
+        selectedItemColor: MainColorPack.monoWhite,
+        unselectedItemColor: MainColorPack.monoGray,
 
       ),
       floatingActionButton: FloatingActionButton(
