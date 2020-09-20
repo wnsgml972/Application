@@ -50,8 +50,8 @@ class _AuthMainPageState extends State<AuthMainPage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: _getAuthScreen(context),
+    return Container(
+      child: _getAuthScreen(context),
     );
   }
 }

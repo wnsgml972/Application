@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 // TODO : 연결할 파일 import
+import 'resource/design/ColorPalette.dart';
 import 'Home.dart';
-import 'resource/design/ColorPack.dart';
-import 'Auth.dart';
 
 void main() => runApp(MainApp());
 
@@ -14,7 +13,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         // This is the theme of your application.
-        primaryColor: MainColorPack.primaryColor,
+        primaryColor: MainColorPalette.primaryColor,
 
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
@@ -53,18 +52,31 @@ class _HomeMenuState extends State<MainMenu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: Text(widget.title),
-          centerTitle: true,
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.notifications),
-              onPressed: () { }, // TODO : Do write a redirect event
-              tooltip: 'Notifications',
-            )
-          ]
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            expandedHeight: 100.0,
+            backgroundColor: MainColorPalette.monoWhite,
+            title: Text(
+              'Koffee Street',
+              style: TextStyle(
+                color:MainColorPalette.primaryColor,
+              ),
+            ),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.notifications, color: MainColorPalette.primaryColor,),
+                onPressed: () { }, // TODO : Do write a redirect event
+                tooltip: 'Notifications',
+              ),
+            ],
+          ),
+          SliverToBoxAdapter(
+            child: _childMenuList[_curMenuIndex],
+          ),
+//          child:,
+        ],
       ),
-      body: _childMenuList[_curMenuIndex],
       bottomNavigationBar: BottomNavigationBar(
         onTap: _OnTabTapped,
         currentIndex: _curMenuIndex,
@@ -96,8 +108,8 @@ class _HomeMenuState extends State<MainMenu> {
         // Set Theme
         type: BottomNavigationBarType.fixed,
         backgroundColor: Theme.of(context).primaryColor,
-        selectedItemColor: MainColorPack.monoWhite,
-        unselectedItemColor: MainColorPack.monoGray,
+        selectedItemColor: MainColorPalette.monoWhite,
+        unselectedItemColor: MainColorPalette.monoGray,
 
       ),
       floatingActionButton: FloatingActionButton(
@@ -117,6 +129,8 @@ class PlaceholderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 80.0,
+      height: 200.0,
       color: color,
     );
   }

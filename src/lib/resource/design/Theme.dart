@@ -1,9 +1,9 @@
 // TODO : Theme 분리 필요할 때 작성
 //import 'package:flutter/material.dart';
 //
-//import 'ColorPack.dart';
+//import 'ColorPalette.dart';
 //
-//final ThemeData companyThemeData = new ThemeData(
+//final ThemeData MainThemeData = new ThemeData(
 //    brightness: Brightness.light,
 //    primaryColor: MainColorPack.primaryColor,
 //    primaryColorBrightness: Brightness.light,

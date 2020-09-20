@@ -6,8 +6,8 @@ class HomePage extends StatelessWidget {
   // TODO : Home Widget 작성
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: HomePageDisplay(),
+    return Container(
+      child: HomePageDisplay(),
     );
   }
 }
@@ -36,16 +36,13 @@ class HomePageDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body:Padding(
-        padding: EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            authSession,
-            Icon(Icons.more_horiz,), // TODO : 나누는 가로선을 넣고 싶었다.
-          ],
-        ),
+    return Container(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          authSession,
+          Icon(Icons.more_horiz,), // TODO : 나누는 가로선을 넣고 싶었다.
+        ],
       ),
     );
   }

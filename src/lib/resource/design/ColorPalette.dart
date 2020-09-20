@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MainColorPack {
-  MainColorPack._(); // this basically makes it so you can instantiate this class
+class MainColorPalette {
+  MainColorPalette._(); // this basically makes it so you can instantiate this class
 
   static const MaterialColor primaryColor = const MaterialColor(
     0xff0047bb,
